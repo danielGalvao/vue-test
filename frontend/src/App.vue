@@ -1,13 +1,11 @@
 <template>
   <div>
     <h1>{{ titulo }}</h1>
-
     <ul>
       <li v-for="foto of fotos">
         <img :src="foto.url" :alt="foto.titulo">
       </li>
     </ul>
-
   </div>
 </template>
 
@@ -18,7 +16,7 @@ export default {
 
     return {
 
-      titulo: 'Alurapic', 
+      titulo: 'Vue test', 
       fotos: [
         {
           url: 'http://tudosobrecachorros.com.br/wp-content/uploads/cachorro-independente.jpg',

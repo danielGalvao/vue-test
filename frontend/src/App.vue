@@ -10,24 +10,19 @@
 </template>
 
 <script>
+const urlFotos = 'http://localhost:3000/v1/fotos'
 export default {
 
-  data() {
-
+  data(){
     return {
-
-      titulo: 'Vue test', 
-      fotos: [
-        {
-          url: 'http://tudosobrecachorros.com.br/wp-content/uploads/cachorro-independente.jpg',
-          titulo: 'cachorro'
-        },
-        {
-          url: 'http://tudosobrecachorros.com.br/wp-content/uploads/cachorro-independente.jpg',
-          titulo: 'Cachorrão'
-        }
-      ]
+      titulo: 'Vue test',
+      fotos: []
     }
+  },
+  created(){
+    this.$http.get(urlFotos)
+      .then(res => res.json())
+      .then(fotos => this.fotos = fotos, err => console.log(err))
   }
 }
 

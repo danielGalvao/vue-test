@@ -17,7 +17,7 @@ import Foto from './components/shared/Foto/Foto.vue'
 export default {
   
   components: {
-    'foto': Foto
+    foto: Foto
   }
 
   data(){

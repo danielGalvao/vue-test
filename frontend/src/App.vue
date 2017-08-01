@@ -3,7 +3,9 @@
     <h1>{{ titulo }}</h1>
     <ul>
       <li v-for="foto of fotos">
-        <img :src="foto.url" :alt="foto.titulo">
+        <foto :titulo="foto.titulo">
+          <img class="responsive-image" :src="foto.url" :alt="foto.titulo">
+        </foto>
       </li>
     </ul>
   </div>
@@ -11,8 +13,12 @@
 
 <script>
 const urlFotos = 'http://localhost:3000/v1/fotos'
+import Foto from './components/shared/Foto/Foto.vue'
 export default {
 
+  components: {
+    foto: Foto
+  },
   data(){
     return {
       titulo: 'Vue test',

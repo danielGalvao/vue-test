@@ -13,7 +13,7 @@
 
 <script>
 const urlFotos = 'http://localhost:3000/v1/fotos'
-import Foto from './components/shared/Foto/Foto.vue'
+import Foto from '../shared/Foto/Foto.vue'
 export default {
 
   components: {

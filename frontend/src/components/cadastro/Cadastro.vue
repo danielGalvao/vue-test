@@ -7,6 +7,6 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
   h1 { color: red}
 </style>

@@ -5,6 +5,7 @@
       <li v-for="foto of fotos">
         <foto :titulo="foto.titulo">
           <img class="responsive-image" :src="foto.url" :alt="foto.titulo">
+          <btn type="Button" label="Remover"></btn>
         </foto>
       </li>
     </ul>
@@ -14,10 +15,13 @@
 <script>
 const urlFotos = 'http://localhost:3000/v1/fotos'
 import Foto from '../shared/foto/Foto.vue'
+import Btn from '../shared/button/Button.vue'
+
 export default {
 
   components: {
-    foto: Foto
+    foto: Foto,
+    btn: Btn
   },
   data(){
     return {

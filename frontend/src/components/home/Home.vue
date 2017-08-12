@@ -5,7 +5,13 @@
       <li v-for="foto of fotos">
         <foto :titulo="foto.titulo">
           <img class="responsive-image" :src="foto.url" :alt="foto.titulo">
-          <btn type="Button" label="Remover" @botaoAtivado="remove(foto)"></btn>
+          <btn
+            type="Button"
+            label="Remover"
+            @botaoAtivado="remove(foto)"
+            :confirmation="false"
+            styleBtn="default"
+          ></btn>
         </foto>
       </li>
     </ul>

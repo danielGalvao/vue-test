@@ -1,13 +1,24 @@
 <template lang="html">
-  <button class="btn btn-danger" @click="disparaAcao()" :type="tipo">{{ label }}</button>
+  <button :class="styleButton" @click="disparaAcao()" :type="tipo">{{ label }}</button>
 </template>
 
 <script>
 export default {
-  props: ['type', 'label'],
+  props: ['type', 'label', 'confirmation', 'styleBtn'],
   methods: {
     disparaAcao(){
+      if(this.confirmation) {
+        if(confirm("Deseja realmente remover a imagem?")){
+          this.$emit('botaoAtivado')
+        }
+        return;
+      }
       this.$emit('botaoAtivado')
+    }
+  },
+  computed: {
+    styleButton() {
+      return this.styleBtn == 'default' ? 'btn btn-default' : 'btn btn-danger'
     }
   }
 }

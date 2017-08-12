@@ -5,7 +5,7 @@
       <li v-for="foto of fotos">
         <foto :titulo="foto.titulo">
           <img class="responsive-image" :src="foto.url" :alt="foto.titulo">
-          <btn type="Button" label="Remover"></btn>
+          <btn type="Button" label="Remover" @botaoAtivado="remove(foto)"></btn>
         </foto>
       </li>
     </ul>
@@ -22,6 +22,11 @@ export default {
   components: {
     foto: Foto,
     btn: Btn
+  },
+  methods: {
+    remove(foto){
+      alert(foto.titulo)
+    }
   },
   data(){
     return {

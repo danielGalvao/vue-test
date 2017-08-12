@@ -1,10 +1,15 @@
 <template lang="html">
-  <button class="btn btn-danger" :type="tipo">{{ label }}</button>
+  <button class="btn btn-danger" @click="disparaAcao()" :type="tipo">{{ label }}</button>
 </template>
 
 <script>
 export default {
-  props: ['type', 'label']
+  props: ['type', 'label'],
+  methods: {
+    disparaAcao(){
+      this.$emit('botaoAtivado')
+    }
+  }
 }
 </script>
 

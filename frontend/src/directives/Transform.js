@@ -6,18 +6,12 @@ Vue.directive('my-transform', {
     
     el.addEventListener('click', function(){
       
-      let increment = 90
-      ,   animate   = false
-      
-      if(binding.value) {
-        increment = binding.value.increment
-        animate   = binding.value.animate 
-      }
+      let increment = binding.value || 90
       
       current+= increment
       el.style.transform = `rotate(${current}deg)`
       
-      if(animate){
+      if(binding.modifiers.animate){
         el.style.transition = 'transform 0.5s'
       }
     })

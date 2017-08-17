@@ -4,7 +4,7 @@
     <ul>
       <li v-for="foto of fotos">
         <foto :titulo="foto.titulo">
-          <img class="responsive-image" v-my-transform :src="foto.url" :alt="foto.titulo">
+          <img class="responsive-image" v-my-transform="45" :src="foto.url" :alt="foto.titulo">
           <btn
             type="Button"
             label="Remover"
